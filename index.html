@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<meta name = "format-detection" content="telephone = no" />
+		<title>一秒夺金</title>
+		<link type="text/css" href="css/Xcompany.css" rel="stylesheet" />
+		<link type="text/css" href="css/animate.css?t=1" rel="stylesheet" />
+		<link type="text/css" href="css/game.css?t=3" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/second.js?t=12"></script>
+		<script type="text/javascript" src="js/font.js"></script>
+		<script type="text/javascript" src="js/style.js?t=3"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="js/daojishi.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/appopen.js?t=1"></script>
+	</head>
+	<body>
+		<div class="second">
+			<!--体验卡信息-->
+			<div class="tyInfo" style="position: fixed;width: 100%;left: 0;top: 2%;font-size: 1.2rem;color: #fff;text-align: center;z-index: 999999;">
+				<div class="tyInfo_data"></div>
+				<div class="tyInfo_data_data"></div>
+			</div>
+			<div class="second_beij"><img src="images/second_beij.jpg"></div>
+			<div class="second_cont">
+				<!--金豆数-->
+				<div class="sc_gold"><i class="icon_gold"></i><span class="myGold"></span><i class="icon_more" onclick="appOen.showRechargeDialog1()"></i></div>
+				<!--商城/活动规则按钮-->
+				<div class="sc_rule">
+					<!--任务-->
+					<a href="javascript:;" class="btn_renwu" onclick="javascript:appOen.gameTask(5);"><img src="images/pk_icon1.png"></a>
+					<a href="javascript:;" class="btn_shop" onclick="appOen.showGoldenShopDialog()"><img src="images/pk_icon2.png"></a>
+					<a href="javascript:;" class="btn_rule"><img src="images/pk_icon3.png"></a>
+				</div>
+				<div class="sc_rule_text wow animated" data-wow-duration="0.6s">
+					<div class="rule_text_beij"><img src="images/second_img1.png"></div>
+					<div class="rule_text_link">
+						<a href="javascript:;" class="link_order">参与记录</a>
+					    <a href="javascript:;" class="link_rule">活动规则</a>
+					</div>
+				</div>
+				<!--游戏主界面-->
+				<div class="sc_cont" id="sc_cont">
+					<div class="st_time">
+						<div class="sc_cont_beij"><img src="images/time_beij.png"></div>
+						<div class="sc_cont_time">
+							<div id="sc_time" class="sc_time"></div>
+							<div class="sc_date"><span class="year">2017</span>年<span class="month">11</span>月<span class="day"></span>日</div>
+						</div>
+					</div>
+					<div class="st_dans">
+						<div class="sc_title"><i></i>单双结果=毫秒十位数字＋毫秒个位数字</div>
+						<table class="out_table" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td width="85%">
+									<table class="in_table" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td><span class="td_text active dans">单</span></td>
+											<td><span class="td_text shuan">双</span></td>
+										</tr>
+									</table>
+								</td>
+								<td><span class="td_beis">2倍</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="st_number">
+						<div class="sc_title"><i></i>0~9结果=毫秒个位数字</div>
+						<table class="out_table" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td width="85%">
+									<table class="in_table" cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td><span class="td_text">0</span></td>
+											<td><span class="td_text">1</span></td>
+											<td><span class="td_text">2</span></td>
+											<td><span class="td_text">3</span></td>
+											<td><span class="td_text">4</span></td>
+										</tr>
+										<tr>
+											<td><span class="td_text">5</span></td>
+											<td><span class="td_text">6</span></td>
+											<td><span class="td_text">7</span></td>
+											<td><span class="td_text">8</span></td>
+											<td><span class="td_text">9</span></td>
+										</tr>
+									</table>
+								</td>
+								<td><span class="td_beis">9倍</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="st_cm"></div>
+					<div class="st_btn"><a href="javascript:;" class="buy_btn"><img src="images/second_btn1.png"></a></div>
+				</div>
+			</div>
+		</div>
+		<!--开奖结果-->
+		<div class="second_tanc wow animated" data-wow-duration="0.8s">
+			<!--<div class="second_tanc_beij"><img src="images/second_beij2.png"></div>-->
+			<div class="second_tanc_text">
+				<div class="tanc_close"><img src="images/second_close.png"></div>
+				<div class="tanc_align"><img src="images/btn_align.png"></div>
+				<!--<div class="tanc_title"><img src="images/second_result.png"></div>-->
+				<div class="tanc_win" style="display: none;"><img src="images/second_beijWin.png"></div>
+				<div class="tanc_fail" style="display: none;"><img src="images/second_beijFail.png"></div>
+				<div class="result_img">
+					<!--<div class="result_img_img"><img src="images/second_beij3.png"></div>-->
+					<div class="result_img_text">
+						<div class="sc_cont_time">
+							<div id="result_time" class="sc_time"></div>
+							<div class="sc_date"><span class="year">2017</span>年<span class="month">11</span>月<span class="day"></span>日</div>
+						</div>
+					</div>
+				</div>
+				<div class="result_text">
+					<div class="rt_hej">计算结果：<span class="num_shiwei"></span>+<span class="num_gewei"></span>=<strong class="cfd hejNum"></strong></div>
+					<div class="rt_touz">投注结果：<strong class="num_dans cfd"></strong><strong class="cfd">/</strong><strong class="num_gold cfd"></strong></div>
+					<div class="rt_result">开奖结果：<strong class="num_result fail"></strong></div>
+				</div>
+				<div class="result_my"></div>
+			</div>
+		</div>
+		<!--提示信息-->
+		<div class="tisText"><span class="tisInfo"></span></div>
+		<!--参与记录弹窗-->
+		<div class="tanc_order">
+		  <div class="tanc_beij"></div>
+		  <div class="order_list wow animated" data-wow-duration="0.6s">
+		  	<div class="list_title">
+		  		<span class="spn sp1">投注/竞猜时间</span>
+		  		<span class="spn sp2">投注详情</span>
+		  		<span class="spn sp3">竞猜结果</span>
+		  	</div>
+		  	<div class="list_none"><img src="images/order_none.png"></div>
+		  	<div class="list_ll">
+		  		<ul></ul>
+		  	</div>
+		  	<div class="list_more">仅显示最近50条记录</div>
+		  </div>
+		</div>
+		<!--规则-->
+		<div class="tanc_rule">
+			<div class="tanc_beij"></div>
+			<div class="order_list wow animated" data-wow-duration="0.6s">
+				<div class="rule_box"><img src="images/rule_beij.jpg"></div>
+			</div>
+		</div>
+		<!--任务-->
+		<div class="renwu">
+			<div class="renwu_beij"></div>
+			<div class="renwu_list">
+			  <ul>
+			  	<li><a href="javascript:;">
+			  	  <div class="renwu_fl">
+			  	  	<div class="renwu_imt"><img src="images/second_cm2.png"></div>
+			  	  	<div class="renwu_text">
+			  	  		<div class="title">首次兑换商品（<span class="num_me">0</span>/<span class="num_all"></span>）</div>
+			  	  		<div class="info">奖励：新六六六体验卡1张</div>
+			  	  	</div>
+			  	  </div>
+			  	  <div class="renwu_fr"><button class="renwu_btn start">前往</button></div>
+			  	</a></li>
+			  	<li><a href="javascript:;">
+			  	  <div class="renwu_fl">
+			  	  	<div class="renwu_imt"><img src="images/second_cm2.png"></div>
+			  	  	<div class="renwu_text">
+			  	  		<div class="title">首次兑换商品（<span class="num_me">0</span>/<span class="num_all"></span>）</div>
+			  	  		<div class="info">奖励：新六六六体验卡1张</div>
+			  	  	</div>
+			  	  </div>
+			  	  <div class="renwu_fr"><button class="renwu_btn over">前往</button></div>
+			  	</a></li>
+			  </ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+ 		  document.getElementById("sc_cont").addEventListener('touchmove', function (event) {
+		    event.preventDefault();
+		  }, false);
+ 	    </script>
+		<script>
+			var wow = new WOW({
+			    boxClass: 'wow',
+			    animateClass: 'animated',
+			    offset: 0,
+			    mobile: true,
+			    live: true,
+			    scrollBar: true
+			});
+			wow.init();
+		 </script>
+		 <script type="text/javascript">
+		 	$(function(){
+		 		$(".renwu_beij").click(function(){
+		 			$(this).hide();
+		 			$(".renwu_list").css("bottom","-100%");
+		 		})
+		 	})
+		 </script>
+	</body>
+</html>
